@@ -1,0 +1,17 @@
+#game-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#game-contianer {
+    display: flex;
+}
+
+#game-screen {
+    display: none;
+}
+
+#game-end {
+    display: none;
+}
