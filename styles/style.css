@@ -52,7 +52,13 @@ main {
     transform: scaleX(-1);
 }
 
-#game-contianer {
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    padding: 20px 0px; 
+    justify-content: center;
 }
 
 #stats-container {
@@ -62,6 +68,7 @@ main {
 
 #game-screen {
     display: none;
+    border: 1px solid black;
 }
 
 #game-end {

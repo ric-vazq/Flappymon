@@ -18,7 +18,7 @@ class Game {
         this.gameScreen.style.width = `${this.width}px`;
         this.startScreen.style.display = 'none';
         this.gameScreen.style.display = 'block';
-        this.gameScreen.style.display = 'block';
+        this.gameStats.style.display = 'block';
 
         this.gameLoop();
     }
