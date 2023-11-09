@@ -15,4 +15,8 @@ window.onload = function () {
         game = new Game();
         game.start();
     }
+    function restartGame(){
+        console.log('restart game');
+        location.reload();
+    }
 }

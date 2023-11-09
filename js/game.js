@@ -1,8 +1,7 @@
 class Game {
     constructor () {
         this.startScreen = document.getElementById('game-intro');
-        this.gameScreen = document.getElementById('game-screen');
-        this.gameContainer = document.getElementById('game-container')
+        this.gameScreen = document.getElementById('game-container')
         this.gameEndScreen = document.getElementById('game-end');
         this.player = null; 
         this.height = 600; 
@@ -17,7 +16,7 @@ class Game {
         this.gameScreen.style.height = `${this.height}px`;
         this.gameScreen.style.width = `${this.width}px`;
         this.startScreen.style.display = 'none';
-        this.gameContainer.style.display = 'flex';
+        this.gameScreen.style.display = 'flex';
 
         this.gameLoop();
     }
@@ -33,4 +32,13 @@ class Game {
     update() {
         console.log('Game Update');
     }
+
+    endGame(){
+        this.player.element.remove();
+        this.obstacles.forEach(obstacle => obstacle.element.remove());
+        this.gameOver = true;
+        this.gameScreen.style.display = 'none';
+        this.gameEndScreen.style.display = 'block';
+    }
+
 }
