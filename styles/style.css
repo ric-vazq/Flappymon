@@ -28,7 +28,7 @@ main {
     padding: 10px 20px;
     background-color: white;
     border: 5px solid black;
-    box-shadow: 10px 7px 7px lightgray;
+    box-shadow: 10px 7px 7px lightgrey;
 }
 #start-button-container {
     display: flex;
@@ -76,6 +76,13 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../images/end-screen.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    
     padding: 175px , 0px;
 }
 #background-screen{  
@@ -84,6 +91,7 @@ main {
 
 }
 #restart-button {
+    margin-top: 200px;
     background-color: transparent;
     display: flex;
     align-items: center;
@@ -91,12 +99,10 @@ main {
    
 }
 .restart-text{
-    display: flex;
-    flex-direction: column;
-    align-items: end;
     border: black 5px solid;
+    background-color: white;
     box-sizing: content-box;
-    box-shadow: white;
+    box-shadow: lightgrey 7px 7px 7px;
     width: 60vw;
     height: auto;
     margin: 50px 0px;
