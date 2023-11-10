@@ -57,19 +57,37 @@ main {
     display: none;
     flex-direction: column;
     align-items: center;
-    width: 100vw;
-    padding: 20px 0px; 
     justify-content: center;
+    width: 100vw;
+    height: 100vh; 
+    background-image: url(../images/pixel-art-sky.png);
+    background-size: contain;
+    background-repeat: round;
+}
+
+.game-borders {
+    border:  rgba(115, 191, 230, 1) solid 5px; 
+    border-radius: 10px;
 }
 
 #stats-container {
     display: block;
     text-align: center;
+    padding: 0px 15px 5px; 
+    background-color: white;
+    margin-bottom: 20px;
+}
+#stats-container p {
+    font-size: 20px;
+}
+
+#score {;
+    font-size: 40px;
 }
 
 #game-screen {
     display: block;
-    border: 1px solid black;
+    background: white;
 }
 
 #game-end {
@@ -81,15 +99,9 @@ main {
     background-image: url(../images/end-screen.png);
     background-repeat: no-repeat;
     background-size: cover;
-
-    
     padding: 175px , 0px;
 }
-#background-screen{  
-    background-image:url(../images/end-screen.png);
-    background-size:cover;
 
-}
 #restart-button {
     margin-top: 200px;
     background-color: transparent;
@@ -98,6 +110,7 @@ main {
     border: none;
    
 }
+
 .restart-text{
     border: black 5px solid;
     background-color: white;
