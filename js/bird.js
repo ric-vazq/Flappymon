@@ -5,12 +5,12 @@ class Bird {
         this.top = top;
         this.width = width;
         this.height = height;
-        this.directionX = 0; 
         this.directionY = 0;
         this.element = document.createElement('img');
         this.element.src = imgSrc;
 
-        this.element.style.position = 'absolute';
+        this.element.style.position = 'relative';
+        this.element.style.transform = 'scaleX(-1)';
         this.element.style.width = `${width}px`;
         this.element.style.height = `${height}px`;
         this.element.style.left = `${left}px`;
@@ -19,9 +19,23 @@ class Bird {
         this.gameScreen.appendChild(this.element);
     }
 
-    move() {}
+    move() {
+        this.top += this.directionY;
 
-    updatePosition() {}
+        if (this.top < 10) {
+            this.top = 10;
+        }
+
+        if (this.top > this.gameScreen.offsetHeight - this.height - 10) {
+            this.top = this.gameScreen.offsetHeight - this.height - 10; 
+        }
+
+        this.updatePosition();
+    }
+
+    updatePosition() {
+        this.element.style.top = `${this.top}px`;
+    }
 
     didCollide() {}
 }

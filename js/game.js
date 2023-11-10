@@ -6,8 +6,8 @@ class Game {
         this.gameEndScreen = document.getElementById('game-end');
         this.player = new Bird(
             this.gameScreen,
-            0,
-            0, 
+            100,
+            250, 
             100,
             100, 
             './images/Pidgey-Sprite.png'
@@ -38,6 +38,6 @@ class Game {
     }
 
     update() {
-        console.log('Game Update');
+        this.player.move();
     }
 }

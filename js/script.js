@@ -15,4 +15,32 @@ window.onload = function () {
         game = new Game();
         game.start();
     }
+
+    function handleKeydown (event) {
+        const key = event.key;
+        const possibleKeyStrokes = [
+          "ArrowUp",
+          "Spacebar"
+        ];
+        if (possibleKeyStrokes.includes(key)) {
+          event.preventDefault();
+    
+          switch (key) {
+            case "ArrowLeft":
+              game.player.directionX = -1;
+              break;
+            case "ArrowUp":
+              game.player.directionY = -1;
+              break;
+            case "ArrowRight":
+              game.player.directionX = 1;
+              break;
+            case "ArrowDown":
+              game.player.directionY = 1;
+              break;  
+          }
+        }
+      }
+
+    window.addEventListener("keydown", handleKeydown);
 }
