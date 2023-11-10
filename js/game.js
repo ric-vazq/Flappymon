@@ -1,8 +1,7 @@
 class Game {
     constructor () {
         this.startScreen = document.getElementById('game-intro');
-        this.gameScreen = document.getElementById('game-screen');
-        this.gameContainer = document.getElementById('game-container')
+        this.gameScreen = document.getElementById('game-container')
         this.gameEndScreen = document.getElementById('game-end');
         this.player = new Bird(
             this.gameScreen,
@@ -24,7 +23,7 @@ class Game {
         this.gameScreen.style.height = `${this.height}px`;
         this.gameScreen.style.width = `${this.width}px`;
         this.startScreen.style.display = 'none';
-        this.gameContainer.style.display = 'flex';
+        this.gameScreen.style.display = 'flex';
 
         this.gameLoop();
     }
@@ -40,4 +39,13 @@ class Game {
     update() {
         this.player.move();
     }
+
+    endGame(){
+        this.player.element.remove();
+        this.obstacles.forEach(obstacle => obstacle.element.remove());
+        this.gameOver = true;
+        this.gameScreen.style.display = 'none';
+        this.gameEndScreen.style.display = 'block';
+    }
+
 }

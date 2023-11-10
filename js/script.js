@@ -43,4 +43,10 @@ window.onload = function () {
       }
 
     window.addEventListener("keydown", handleKeydown);
+
+    function restartGame(){
+        console.log('restart game');
+        location.reload();
+    }
+
 }
