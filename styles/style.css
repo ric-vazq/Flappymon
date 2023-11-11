@@ -64,7 +64,7 @@ main {
     justify-content: center;
     background-image: url(../images/pixel-art-sky.png);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
 }
 
 #stats-container {
@@ -84,66 +84,39 @@ main {
 
 #game-screen {
     display: block;
-    position: relative;
     overflow: hidden;
 }
 
 .fade-in {
-    position: absolute;
-    content: '';
-    height: 100%;
-    width: 100%;
-    inset: 0;
+    inset: 0,5;
+    background-image: url(/images/image.png);
     background-size: cover;
     background-position: center center;
-    opacity: 0;
-    animation-name: fade-day;
-    -webkit-animation-name: fade-day;
-    animation-duration: 45s;
-    animation-iteration-count: infinite;
-}
-
-.fade-in :nth-child(2) {
-    animation-delay: 0s;
-}
-.fade-in :nth-child(3) {
-    animation-delay: 15s;
-}
-.fade-in :nth-child(4) {
-    animation-delay: 30s;
+    animation: fade-day 90s linear infinite;
 }
 
 @keyframes fade-day {
-    0% {
-        opacity: 0.5;
-        transform: scale(100%);
+    from {
+        background: url(/images/image.png);
+        background-size: cover;
+        background-position: center center;
     }
-    15% {
-        opacity: 1;
-    }
-    66.66% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-@-webkit-keyframes fade-day {
-    0% {
-        opacity: 0.5;
-        transform: scale(100%);
-    }
-    15% {
-        opacity: 1;
+    33.33% {
+        background: url(/images/midday.png);
+        background-size: cover;
+        background-position: center center;
     }
     66.66% {
-        opacity: 1;
+        background: url(/images/night.png);
+        background-size: cover;
+        background-position: center center;
     }
-    100% {
-        opacity: 0;
+    to {
+        background: url(/images/image.png);
+        background-size: cover;
+        background-position: center center;
     }
 }
-
 
 
 #game-end {
