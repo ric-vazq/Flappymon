@@ -27,10 +27,10 @@ window.onload = function () {
     
           switch (key) {
             case "ArrowUp":
-              game.player.directionY = -1;
+              game.player.velocityY = -6;
               break;
             case "Space":
-              game.player.directionY = -1;
+              game.player.velocityY = -6;
               break;  
           }
         }
