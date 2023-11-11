@@ -20,23 +20,17 @@ window.onload = function () {
         const key = event.key;
         const possibleKeyStrokes = [
           "ArrowUp",
-          "Spacebar"
+          "Space"
         ];
         if (possibleKeyStrokes.includes(key)) {
           event.preventDefault();
     
           switch (key) {
-            case "ArrowLeft":
-              game.player.directionX = -1;
-              break;
             case "ArrowUp":
               game.player.directionY = -1;
               break;
-            case "ArrowRight":
-              game.player.directionX = 1;
-              break;
-            case "ArrowDown":
-              game.player.directionY = 1;
+            case "Space":
+              game.player.directionY = -1;
               break;  
           }
         }

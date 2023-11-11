@@ -5,7 +5,7 @@ class Bird {
         this.top = top;
         this.width = width;
         this.height = height;
-        this.directionY = 0;
+        this.directionY = 1;
         this.element = document.createElement('img');
         this.element.src = imgSrc;
 
