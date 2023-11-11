@@ -46,7 +46,7 @@ class Game {
         this.obstacles.forEach(obstacle => obstacle.element.remove());
         this.gameOver = true;
         this.gameContainer.style.display = 'none';
-        this.gameEndScreen.style.display = 'block';
+        this.gameEndScreen.style.display = 'flex';
     }
 
 }

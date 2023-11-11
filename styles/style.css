@@ -37,7 +37,6 @@ main {
 
 #start-button {
     background-color: white;
-    color: black;
     font-size: 50px;
     padding: 10px 20px;
     border-radius: 20px;
@@ -58,6 +57,9 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-image: url(../images/pixel-art-sky.png);
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 #stats-container {
