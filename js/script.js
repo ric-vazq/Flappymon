@@ -3,12 +3,18 @@ window.onload = function () {
     const restartButton = document.getElementById('restart-button');
     let game; 
 
-    startButton.addEventListener('click', function () {
+    startButton.addEventListener('click', () => {
         startGame();
     });
+    startButton.addEventListener('mouseover', () => {
+      startButton.style.cursor = 'pointer'
+    })
     restartButton.addEventListener('click', () => {
         restartGame();
     });
+    restartButton.addEventListener('mouseover', () =>{
+      restartButton.style.cursor = 'pointer'
+    })
 
     function startGame() {
         console.log('start game');
