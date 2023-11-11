@@ -58,6 +58,8 @@ main {
 }
 
 #game-container {
+    height: 100vh;
+    width: 100vw; 
     display: none;
     flex-direction: column;
     align-items: center;
@@ -72,7 +74,9 @@ main {
     text-align: center;
     padding: 0px 15px 5px; 
     background-color: white;
-    margin-bottom: 20px;
+    border-bottom: none;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
 #stats-container p {
     font-size: 20px;
