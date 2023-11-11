@@ -64,7 +64,7 @@ main {
     justify-content: center;
     background-image: url(../images/pixel-art-sky.png);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
 }
 
 #stats-container {
@@ -84,7 +84,40 @@ main {
 
 #game-screen {
     display: block;
+    overflow: hidden;
 }
+
+.fade-in {
+    inset: 0,5;
+    background-image: url(/images/image.png);
+    background-size: cover;
+    background-position: center center;
+    animation: fade-day 90s linear infinite;
+}
+
+@keyframes fade-day {
+    from {
+        background: url(/images/image.png);
+        background-size: cover;
+        background-position: center center;
+    }
+    33.33% {
+        background: url(/images/midday.png);
+        background-size: cover;
+        background-position: center center;
+    }
+    66.66% {
+        background: url(/images/night.png);
+        background-size: cover;
+        background-position: center center;
+    }
+    to {
+        background: url(/images/image.png);
+        background-size: cover;
+        background-position: center center;
+    }
+}
+
 
 #game-end {
     display: none;
