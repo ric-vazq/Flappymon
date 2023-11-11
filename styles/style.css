@@ -52,6 +52,11 @@ main {
     transform: scaleX(-1);
 }
 
+.game-borders {
+    border:  rgba(115, 191, 230, 1) solid 5px; 
+    border-radius: 10px;
+}
+
 #game-container {
     display: none;
     flex-direction: column;
@@ -79,7 +84,6 @@ main {
 
 #game-screen {
     display: block;
-    border: 1px solid black;
 }
 
 #game-end {
