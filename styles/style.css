@@ -57,71 +57,27 @@ main {
     display: none;
     flex-direction: column;
     align-items: center;
-    width: 100vw;
-    padding: 20px 0px; 
     justify-content: center;
-    position: relative;
-    overflow: hidden;
 }
 
 #stats-container {
     display: block;
     text-align: center;
+    padding: 0px 15px 5px; 
+    background-color: white;
+    margin-bottom: 20px;
+}
+#stats-container p {
+    font-size: 20px;
+}
+
+#score {
+    font-size: 40px;
 }
 
 #game-screen {
     display: block;
     border: 1px solid black;
-    position: relative;
-    overflow: hidden;
-
-}
-
-.fade-in {
-    position: absolute;
-    content: '';
-    height: 100%;
-    width: 100%;
-    inset: 0;
-    background-size: cover;
-    background-position: center center;
-    opacity:0;
-    animation-name: fade-day;
-    animation-duration: 45s;
-    animation-iteration-count: infinite;
-}
-
-.fade-in :nth-child(1) {
-    animation-delay: 0s;
-
-}
-
-.fade-in :nth-child(2) {
-    animation-delay: 15s;
-}
-
-.fade-in :nth-child(3) {
-    animation-delay: 30s;
-}
-
-@keyframes fade-day {
-    
-    0% {
-        opacity: 0;
-        transform: scale(100%);
-    }
-    16.66% {
-        opacity: 1;
-    }
-    33.33% {
-        opacity: 1;
-    }
-    48.66% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 0;
-    }
 }
 
 #game-end {
@@ -133,15 +89,9 @@ main {
     background-image: url(../images/end-screen.png);
     background-repeat: no-repeat;
     background-size: cover;
-
-    
     padding: 175px , 0px;
 }
-#background-screen{  
-    background-image:url(../images/end-screen.png);
-    background-size:cover;
 
-}
 #restart-button {
     margin-top: 200px;
     background-color: transparent;
@@ -150,6 +100,7 @@ main {
     border: none;
    
 }
+
 .restart-text{
     border: black 5px solid;
     background-color: white;

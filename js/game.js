@@ -3,7 +3,14 @@ class Game {
         this.startScreen = document.getElementById('game-intro');
         this.gameScreen = document.getElementById('game-container')
         this.gameEndScreen = document.getElementById('game-end');
-        this.player = null; 
+        this.player = new Bird(
+            this.gameScreen,
+            100,
+            250, 
+            100,
+            100, 
+            './images/Pidgey-Sprite.png'
+        ) 
         this.height = 600; 
         this.width = 800; 
         this.obstacles = [];
@@ -30,7 +37,7 @@ class Game {
     }
 
     update() {
-        console.log('Game Update');
+        this.player.move();
     }
 
     endGame(){
