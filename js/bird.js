@@ -1,5 +1,5 @@
 class Bird {
-    constructor(gameScreen , left , top , width , height , imgSrc){
+    constructor(gameScreen , left , top , width , height){
         this.gameScreen = gameScreen;
         this.left = left;
         this.top = top;
@@ -7,8 +7,8 @@ class Bird {
         this.height = height;
         this.directionY = 1;
         this.element = document.createElement('img');
-        this.element.src = imgSrc;
-
+        
+        this.element.src = './images/Pidgey-Sprite.png';
         this.element.style.position = 'relative';
         this.element.style.transform = 'scaleX(-1)';
         this.element.style.width = `${width}px`;
@@ -35,6 +35,12 @@ class Bird {
 
     updatePosition() {
         this.element.style.top = `${this.top}px`;
+    }
+    firstEvolution() {
+        this.element.src = './pidgeotto-sprite.png'
+    }
+    secondEvolution() {
+        this.element.src = './pidgeot-sprite.png'
     }
 
     didCollide() {}
