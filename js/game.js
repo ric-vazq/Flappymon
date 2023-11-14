@@ -38,6 +38,30 @@ class Game {
 
     update() {
         this.player.move();
+
+        for (let i = 0; i < this.obstacles.length; i++) {
+            const obstacle = this.obstacles[i];
+            obstacle.move();
+      
+            if (this.player.didCollide(obstacle)) {
+              obstacle.element.remove();
+              this.obstacles.splice(i, 1);
+              this.lives--;
+              i--;
+
+            } else if (obstacle.left < 0) {
+              this.score++;
+              obstacle.element.remove();
+              this.obstacles.splice(i, 1);
+              i--;
+            }
+        }   
+        if (this.lives === 0) {
+            this.endGame();
+        }
+        if (Math.random() > 0.98 && this.obstacles.length < 3) {
+            this.obstacles.push(new Obstacle(this.gameScreen));
+        }
     }
 
     incrementScore() {
