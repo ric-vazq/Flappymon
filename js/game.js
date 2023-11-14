@@ -50,7 +50,7 @@ class Game {
               this.lives--;
               i--;
 
-            } else if (obstacle.left > this.width) {
+            } else if (obstacle.left < 0) {
               this.score++;
               obstacle.element.remove();
               this.obstacles.splice(i, 1);
@@ -60,7 +60,7 @@ class Game {
         if (this.lives === 0) {
             this.endGame();
         }
-        if (Math.random() > 0.98 && this.obstacles.length < 1) {
+        if (Math.random() > 0.98 && this.obstacles.length < 3) {
             this.obstacles.push(new Obstacle(this.gameScreen));
         }
     }

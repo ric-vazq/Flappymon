@@ -6,13 +6,13 @@ class Obstacle {
         this.width = 60;
         this.height = 300; 
         this.element = document.createElement('img');
-        this.element.src = 'toppipe.png';
+        this.element.src = './images/toppipe.png';
 
         this.element.style.position = 'relative';
-        this.element.style.width = `${width}px`;
-        this.element.style.height = `${height}px`;
-        this.element.style.left = `${left}px`;
-        this.element.style.top = `${top}px`;
+        this.element.style.width = `${this.width}px`;
+        this.element.style.height = `${this.height}px`;
+        this.element.style.left = `${this.left}px`;
+        this.element.style.top = `${this.top}px`;
 
         this.gameScreen.appendChild(this.element);
     }
@@ -24,6 +24,6 @@ class Obstacle {
     }
 
     updatePosition() {
-        this.element.style.left = `${left}px`
+        this.element.style.left = `${this.left}px`
     }
 }
