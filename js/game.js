@@ -9,13 +9,12 @@ class Game {
             100,
             250, 
             100,
-            100, 
-            './images/Pidgey-Sprite.png'
+            100
         ) 
         this.height = 600; 
         this.width = 800; 
         this.obstacles = [];
-        this.score = 0;
+        this.score = 50;
         this.lives = 1;
         this.gameOver = false; 
     }
@@ -39,6 +38,15 @@ class Game {
 
     update() {
         this.player.move();
+    }
+
+    incrementScore() {
+        this.score++;
+        if (this.score === 50) {
+            this.player.firstEvolution();
+        } else if (this.score === 100) {
+            this.player.secondEvolution();
+        }
     }
 
     endGame(){
