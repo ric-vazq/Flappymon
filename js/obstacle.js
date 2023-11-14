@@ -1,12 +1,12 @@
-class Obstacle {
-    constructor (gameScreen) {
+class Pipe {
+    constructor (gameScreen,top , src) {
         this.gameScreen = gameScreen; 
-        this.top = 0;
-        this.left = 800;
+        this.top = top
+        this.left = 700;
         this.width = 60;
-        this.height = 300; 
+        this.height = 300 ; 
         this.element = document.createElement('img');
-        this.element.src = './images/toppipe.png';
+        this.element.src = src;
 
         this.element.style.position = 'relative';
         this.element.style.width = `${this.width}px`;
@@ -27,3 +27,4 @@ class Obstacle {
         this.element.style.left = `${this.left}px`
     }
 }
+

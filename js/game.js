@@ -7,10 +7,11 @@ class Game {
         this.player = new Bird(
             this.gameScreen,
             100,
-            250, 
+            900, 
             100,
             100
         ) 
+        this.timer = 0
         this.height = 600; 
         this.width = 800; 
         this.obstacles = [];
@@ -29,11 +30,26 @@ class Game {
     }
 
     gameLoop() {
+        this.timer++;
+       // console.log(this.timer)
         if (this.gameOver) {
             return; 
         }
         this.update();
+        this.placePipes()
+
         window.requestAnimationFrame(() => this.gameLoop());
+    }
+
+    placePipes(){
+        if(this.timer%90 === 0){
+            let randomNum = 0 - 300/4 - Math.random() * 300/2 ;
+            let newPipeTop = new Pipe(this.gameScreen, randomNum, '/images/toppipe.png');
+            let newPipeBottom = new Pipe(this.gameScreen, randomNum +500 , '/images/bottompipe.png');
+            this.obstacles.push(newPipeBottom , newPipeTop);
+
+        
+        console.log(this.obstacles.length)}
     }
 
     update() {
@@ -49,7 +65,7 @@ class Game {
               this.lives--;
               i--;
 
-            } else if (obstacle.left < 0) {
+            } else if (obstacle.left < -175) {
               this.score++;
               obstacle.element.remove();
               this.obstacles.splice(i, 1);
@@ -59,9 +75,7 @@ class Game {
         if (this.lives === 0) {
             this.endGame();
         }
-        if (Math.random() > 0.98 && this.obstacles.length < 3) {
-            this.obstacles.push(new Obstacle(this.gameScreen));
-        }
+        
     }
 
     incrementScore() {
