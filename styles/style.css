@@ -92,7 +92,6 @@ main {
 }
 
 .fade-in {
-    inset: 0,5;
     background-image: url(/images/image.png);
     background-size: cover;
     background-position: center center;

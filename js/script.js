@@ -17,24 +17,12 @@ window.onload = function () {
     }
 
     function handleKeydown (event) {
-        const key = event.key;
-        const possibleKeyStrokes = [
-          "ArrowUp",
-          "Space"
-        ];
-        if (possibleKeyStrokes.includes(key)) {
-          event.preventDefault();
-    
-          switch (key) {
-            case "ArrowUp":
-              game.player.directionY = -1;
-              break;
-            case "Space":
-              game.player.directionY = -1;
-              break;  
-          }
-        }
+      if (event.code == 'Space' || event.code == 'ArrowUp') {
+        event.preventDefault();
+        game.player.velocityY = -8;
       }
+    }
+    
 
     window.addEventListener("keydown", handleKeydown);
 

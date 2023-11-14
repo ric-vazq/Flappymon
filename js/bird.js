@@ -5,7 +5,8 @@ class Bird {
         this.top = top;
         this.width = width;
         this.height = height;
-        this.directionY = 1;
+        this.velocityY = 0;
+        this.gravity = 0.4;
         this.element = document.createElement('img');
         
         this.element.src = './images/Pidgey-Sprite.png';
@@ -20,7 +21,8 @@ class Bird {
     }
 
     move() {
-        this.top += this.directionY;
+        this.velocityY += this.gravity;
+        this.top += this.velocityY;
 
         if (this.top < 10) {
             this.top = 10;
