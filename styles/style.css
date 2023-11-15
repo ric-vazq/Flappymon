@@ -87,7 +87,9 @@ main {
 }
 
 #game-screen {
+    position: relative;
     display: block;
+    flex-wrap: nowrap;
     overflow: hidden;
 }
 

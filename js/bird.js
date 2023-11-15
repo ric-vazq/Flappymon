@@ -10,7 +10,7 @@ class Bird {
         this.element = document.createElement('img');
         
         this.element.src = './images/Pidgey-Sprite.png';
-        this.element.style.position = 'relative';
+        this.element.style.position = 'absolute';
         this.element.style.transform = 'scaleX(-1)';
         this.element.style.width = `${width}px`;
         this.element.style.height = `${height}px`;
