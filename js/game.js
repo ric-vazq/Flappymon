@@ -35,13 +35,37 @@ class Game {
             return; 
         }
         this.update();
-        this.placePipes();
-
+        if (this.score/2 < 50) {
+            this.placePipesEasy();
+        } else if (this.score/2 < 100) {
+            this.placePipesIntermediate();
+        } else {
+            this.placePipesHard();
+        }
+        
         window.requestAnimationFrame(() => this.gameLoop());
     }
 
-    placePipes(){
+    placePipesEasy(){
         if(this.timer%120 === 0){
+            let randomNum = 0 - 300/4 - Math.random() * 300/2 ;
+            let newPipeTop = new Pipe(this.gameScreen, randomNum, '/images/toppipe.png');
+            let newPipeBottom = new Pipe(this.gameScreen, randomNum + 500 , '/images/bottompipe.png');
+            this.obstacles.push(newPipeBottom , newPipeTop);
+        }
+    }
+
+    placePipesIntermediate() {
+        if(this.timer%110 === 0){
+            let randomNum = 0 - 300/4 - Math.random() * 300/2 ;
+            let newPipeTop = new Pipe(this.gameScreen, randomNum, '/images/toppipe.png');
+            let newPipeBottom = new Pipe(this.gameScreen, randomNum + 500 , '/images/bottompipe.png');
+            this.obstacles.push(newPipeBottom , newPipeTop);
+        }
+    }
+
+    placePipesHard() {
+        if(this.timer%100 === 0){
             let randomNum = 0 - 300/4 - Math.random() * 300/2 ;
             let newPipeTop = new Pipe(this.gameScreen, randomNum, '/images/toppipe.png');
             let newPipeBottom = new Pipe(this.gameScreen, randomNum + 500 , '/images/bottompipe.png');
@@ -55,7 +79,7 @@ class Game {
         for (let i = 0; i < this.obstacles.length; i++) {
             const obstacle = this.obstacles[i];
             obstacle.move();
-      
+            
             if (this.player.didCollide(obstacle)) {
               obstacle.element.remove();
               this.obstacles.splice(i, 1);
@@ -78,9 +102,9 @@ class Game {
     incrementScore() {
         this.score++;
         document.querySelector('#score').innerHTML = this.score/2; 
-        if (this.score === 50) {
+        if (this.score/2 === 50) {
             this.player.firstEvolution();
-        } else if (this.score === 100) {
+        } else if (this.score/2 === 100) {
             this.player.secondEvolution();
         }
     }
