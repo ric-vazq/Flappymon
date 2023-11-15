@@ -6,16 +6,16 @@ class Game {
         this.gameEndScreen = document.getElementById('game-end');
         this.player = new Bird(
             this.gameScreen,
-            100,
-            900, 
-            100,
-            100
+            50,
+            300, 
+            75,
+            75
         ) 
         this.timer = 0
         this.height = 600; 
         this.width = 800; 
         this.obstacles = [];
-        this.score = 50;
+        this.score = 0;
         this.lives = 1;
         this.gameOver = false; 
     }
@@ -31,25 +31,22 @@ class Game {
 
     gameLoop() {
         this.timer++;
-       // console.log(this.timer)
         if (this.gameOver) {
             return; 
         }
         this.update();
-        this.placePipes()
+        this.placePipes();
 
         window.requestAnimationFrame(() => this.gameLoop());
     }
 
     placePipes(){
-        if(this.timer%90 === 0){
+        if(this.timer%120 === 0){
             let randomNum = 0 - 300/4 - Math.random() * 300/2 ;
             let newPipeTop = new Pipe(this.gameScreen, randomNum, '/images/toppipe.png');
-            let newPipeBottom = new Pipe(this.gameScreen, randomNum +500 , '/images/bottompipe.png');
+            let newPipeBottom = new Pipe(this.gameScreen, randomNum + 500 , '/images/bottompipe.png');
             this.obstacles.push(newPipeBottom , newPipeTop);
-
-        
-        console.log(this.obstacles.length)}
+        }
     }
 
     update() {
@@ -65,8 +62,8 @@ class Game {
               this.lives--;
               i--;
 
-            } else if (obstacle.left < -175) {
-              this.score++;
+            } else if (obstacle.left < -60) {
+              this.incrementScore();
               obstacle.element.remove();
               this.obstacles.splice(i, 1);
               i--;
@@ -80,6 +77,7 @@ class Game {
 
     incrementScore() {
         this.score++;
+        document.querySelector('#score').innerHTML = this.score/2; 
         if (this.score === 50) {
             this.player.firstEvolution();
         } else if (this.score === 100) {

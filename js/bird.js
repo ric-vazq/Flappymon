@@ -39,10 +39,10 @@ class Bird {
         this.element.style.top = `${this.top}px`;
     }
     firstEvolution() {
-        this.element.src = './pidgeotto-sprite.png'
+        this.element.src = './images/pidgeotto-sprite.png'
     }
     secondEvolution() {
-        this.element.src = './pidgeot-sprite.png'
+        this.element.src = './images/pidgeot-sprite.png'
     }
 
     didCollide(obstacle) {

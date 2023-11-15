@@ -25,7 +25,7 @@ window.onload = function () {
     function handleKeydown (event) {
       if (event.code == 'Space' || event.code == 'ArrowUp') {
         event.preventDefault();
-        game.player.velocityY = -8;
+        game.player.velocityY = -6;
       }
     }
     
@@ -34,7 +34,6 @@ window.onload = function () {
     window.addEventListener("keydown", handleKeydown);
 
     function restartGame(){
-        console.log('restart game');
         location.reload();
     }
 
