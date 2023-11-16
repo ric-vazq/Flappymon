@@ -1,6 +1,6 @@
 ![](./images/Flappymon-logo.png)
 
-[Try yourself!](like to the game)
+[Try yourself!](https://ric-vazq.github.io/Flappymon/)
 
 # Description 
 
