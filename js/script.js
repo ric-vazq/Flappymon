@@ -10,12 +10,21 @@ window.onload = function () {
       startButton.style.cursor = 'pointer'
     })
     restartButton.addEventListener('click', () => {
+        sfx.heal.play();
         restartGame();
     });
     restartButton.addEventListener('mouseover', () =>{
       restartButton.style.cursor = 'pointer'
-    })
+    });
 
+let sfx = {
+  theme: new Howl({src:'./sfx/Theme.mp3'
+  }),
+  heal: new Howl({src: './sfx/PokemonHealing.mp3'
+  }),
+  wingFlap: new Howl({src: './sfx/flapped.mp3'
+  }),
+}
     function startGame() {
         console.log('start game');
         game = new Game();
@@ -27,6 +36,7 @@ window.onload = function () {
         event.preventDefault();
         game.player.velocityY = -6;
       }
+      sfx.wingFlap.play();
     }
     
   
@@ -34,6 +44,7 @@ window.onload = function () {
     window.addEventListener("keydown", handleKeydown);
 
     function restartGame(){
+      
         location.reload();
     }
 

@@ -7,8 +7,10 @@ class Bird {
         this.height = height;
         this.velocityY = 0;
         this.gravity = 0.4;
+        this.birdSounds = {
+            levelUp:new Howl({src: './sfx/LevelUp.mp3'}),
+    }
         this.element = document.createElement('img');
-        
         this.element.src = './images/Pidgey-Sprite.png';
         this.element.style.position = 'absolute';
         this.element.style.transform = 'scaleX(-1)';
@@ -40,9 +42,11 @@ class Bird {
     }
     firstEvolution() {
         this.element.src = './images/pidgeotto-sprite.png'
+        this.birdSounds.levelUp.play();
     }
     secondEvolution() {
         this.element.src = './images/pidgeot-sprite.png'
+        this.birdSounds.levelUp.play();
     }
 
     didCollide(obstacle) {
@@ -50,14 +54,14 @@ class Bird {
     const obstacleRect = obstacle.element.getBoundingClientRect();
 
     if (
-      playerRect.left < obstacleRect.right &&
-      playerRect.right > obstacleRect.left &&
-      playerRect.top < obstacleRect.bottom &&
-      playerRect.bottom > obstacleRect.top
+        playerRect.left < obstacleRect.right &&
+        playerRect.right > obstacleRect.left &&
+        playerRect.top < obstacleRect.bottom &&
+        playerRect.bottom > obstacleRect.top
     ) {
-      return true;
+        return true;
     } else {
-      return false;
+        return false;
     }
-  } 
+    } 
 }

@@ -11,6 +11,17 @@ class Game {
             75,
             75
         ) 
+        this.music = {
+            littleRoot: new Howl({
+                src: ' ./sfx/LittleRoot.mp3'}),
+            point: new Howl({
+                src: './sfx/point.mp3'}),
+            gotHit: new Howl({
+                src: './sfx/Tackle.mp3'}),
+            pokeCenter: new Howl({
+                src: './sfx/PokemonCenter.mp3'
+            }),
+        }
         this.timer = 0
         this.height = 600; 
         this.width = 800; 
@@ -25,6 +36,8 @@ class Game {
         this.gameScreen.style.width = `${this.width}px`;
         this.startScreen.style.display = 'none';
         this.gameContainer.style.display = 'flex';
+        this.music.littleRoot.play();
+        this.music.pokeCenter.stop();
 
         this.gameLoop();
     }
@@ -81,10 +94,11 @@ class Game {
             obstacle.move();
             
             if (this.player.didCollide(obstacle)) {
-              obstacle.element.remove();
-              this.obstacles.splice(i, 1);
-              this.lives--;
-              i--;
+                this.music.gotHit.play();
+                obstacle.element.remove();
+                this.obstacles.splice(i, 1);
+                this.lives--;
+                i--;
 
             } else if (obstacle.left < -60) {
               this.incrementScore();
@@ -104,9 +118,11 @@ class Game {
         document.querySelector('#score').innerHTML = this.score/2; 
         if (this.score/2 === 50) {
             this.player.firstEvolution();
-        } else if (this.score/2 === 100) {
+        } 
+        else if (this.score/2 === 100) {
             this.player.secondEvolution();
         }
+        this.music.point.play()
     }
 
     endGame(){
@@ -115,6 +131,7 @@ class Game {
         this.gameOver = true;
         this.gameContainer.style.display = 'none';
         this.gameEndScreen.style.display = 'flex';
+        this.music.littleRoot.stop();
+        this.music.pokeCenter.play();
     }
-
 }
