@@ -1,8 +1,10 @@
-# Flappymon
 
-[Try yourself!](like to the game)
+
+
 
 ![](./images/Flappymon-logo.png)
+
+[Try yourself!](like to the game)
 
 # Description 
 
@@ -10,15 +12,17 @@ Based on the popular game Flappybird, Flappymon adds a flavorful twist: it allow
 
 # Main Functions 
 - The player controls the jumping for the "bird" using space or the up arrow
+- upon the pressing of the previously mentioned buttons a jump movement happens and sfx play
 - The bird is affected by realistic gravity, constantly pulling it down. 
-- Once the bird clears a pipe this is removed and the score increases. 
+- Once the bird clears a pipe, the obstacle is removed and the score increases. 
 - At certain increments the player evolves and their sprite changes. 
-- The pipes have a constant speed and interval in which they are set in. In higher levels the interval is increased. 
+- The pipes have a constant speed which simulates movement in the game.
+- The pipes are added in using an in game timer based on the 60 fps. As certain score thresholds the interval is increased. 
+- The Game Screen and Restart Screen both have background music as well as interactive sfx. 
 
 # Backlog Functions 
 - a Pause Button 
-- a High Score board
-- music for the game
+- a High Score Board
 
 # Technologies Used
 
@@ -37,8 +41,17 @@ Based on the popular game Flappybird, Flappymon adds a flavorful twist: it allow
 
 ## script.js
 
--
-
+- window.onload()
+    - addEventListener('click')
+    - addEventListener('mouseover')
+    - addEventListener('click')
+    - addEventListener('mouseover)
+    - sfx()
+    - startGame()
+    - handleKeydown (event) 
+    - window.addEventListner('keydown')
+    - restartGame()
+    
 ## bird.js
 
 - Bird()
@@ -71,6 +84,43 @@ Based on the popular game Flappybird, Flappymon adds a flavorful twist: it allow
     - this.startScreen
     - this.gameContainer
     - this.gameScreen
-    
+    - this.gameEndScreen
+    - this.player
+    - this.music
+    - this.timer
+    - this.height
+    - this.width
+    - this.obstacles
+    - this.score
+    - this.lives
+    - this.gameOver
+- start()
+- gameLoop()
+- placePipesEasy()
+- placePipesIntermediate()
+- placePipesHard()
+- update()
+- incrementScore()
+- endGame()
 
-## obstacle.js
+## pipe.js
+- Pipe()
+    - this.gameScreen
+    - this.top
+    - this.left
+    - this.width
+    - this.height
+    - this.element 
+    - this.element.src
+    - this.element.style.position
+    - this.element.style.width
+    - this.element.style.height
+    - this.element.style.left
+    - this.element.style.top
+    - this.gameScreen.appendChild(this.element)
+- move()
+- updatePositon()
+
+# Extra Links
+
+[Google Presentation](link to our slides)

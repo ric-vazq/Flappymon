@@ -23,16 +23,6 @@ class Pipe {
         this.updatePosition();
     }
 
-    moveIntermediate() {
-        this.left -= 3;
-        this.updatePosition();
-    }
-
-    moveFast() {
-        this.left -= 4; 
-        this.updatePosition();
-    }
-
     updatePosition() {
         this.element.style.left = `${this.left}px`
     }
