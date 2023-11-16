@@ -13,14 +13,19 @@ class Game {
         ) 
         this.music = {
             littleRoot: new Howl({
-                src: ' ./sfx/LittleRoot.mp3'}),
+                src: ' ./sfx/LittleRoot.mp3',
+                loop:true,
+                volume:0.1}),
             point: new Howl({
-                src: './sfx/point.mp3'}),
+                src: './sfx/point.mp3',
+                volume:0.5}),
             gotHit: new Howl({
-                src: './sfx/Tackle.mp3'}),
+                src: './sfx/Tackle.mp3',
+                volume:0.5}),
             pokeCenter: new Howl({
-                src: './sfx/PokemonCenter.mp3'
-            }),
+                src: './sfx/PokemonCenter.mp3',
+                loop:true,
+                volume:0.1}),
         }
         this.timer = 0
         this.height = 600; 
