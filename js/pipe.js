@@ -4,7 +4,7 @@ class Pipe {
         this.top = top
         this.left = 800;
         this.width = 60;
-        this.height = 300 ; 
+        this.height = 310 ; 
         this.element = document.createElement('img');
         this.element.src = src;
 
