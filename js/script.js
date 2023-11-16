@@ -35,8 +35,8 @@ let sfx = {
       if (event.code == 'Space' || event.code == 'ArrowUp') {
         event.preventDefault();
         game.player.velocityY = -6;
+        sfx.wingFlap.play();
       }
-      sfx.wingFlap.play();
     }
     
   
@@ -44,7 +44,6 @@ let sfx = {
     window.addEventListener("keydown", handleKeydown);
 
     function restartGame(){
-      
         location.reload();
     }
 
