@@ -93,7 +93,7 @@ main {
 }
 
 .fade-in {
-    background-image: url(/images/image.png);
+    background-image: url(../images/image.png);
     background-size: cover;
     background-position: center center;
     animation: fade-day 90s linear infinite;
@@ -101,22 +101,22 @@ main {
 
 @keyframes fade-day {
     from {
-        background: url(/images/image.png);
+        background: url(../images/image.png);
         background-size: cover;
         background-position: center center;
     }
     33.33% {
-        background: url(/images/midday.png);
+        background: url(../images/midday.png);
         background-size: cover;
         background-position: center center;
     }
     66.66% {
-        background: url(/images/night.png);
+        background: url(../images/night.png);
         background-size: cover;
         background-position: center center;
     }
     to {
-        background: url(/images/image.png);
+        background: url(../images/image.png);
         background-size: cover;
         background-position: center center;
     }
