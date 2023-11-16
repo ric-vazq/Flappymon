@@ -1,7 +1,3 @@
-
-
-
-
 ![](./images/Flappymon-logo.png)
 
 [Try yourself!](like to the game)
