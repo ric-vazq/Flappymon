@@ -62,8 +62,8 @@ class Game {
     placePipesEasy(){
         if(this.timer%120 === 0){
             let randomNum = 0 - 300/4 - Math.random() * 300/2 ;
-            let newPipeTop = new Pipe(this.gameScreen, randomNum, './images/toppipe.png');
-            let newPipeBottom = new Pipe(this.gameScreen, randomNum + 500 , './images/bottompipe.png');
+            let newPipeTop = new Pipe(this.gameScreen, randomNum, '../images/toppipe.png');
+            let newPipeBottom = new Pipe(this.gameScreen, randomNum + 500 , '../images/bottompipe.png');
             this.obstacles.push(newPipeBottom , newPipeTop);
         }
     }
@@ -71,8 +71,8 @@ class Game {
     placePipesIntermediate() {
         if(this.timer%110 === 0){
             let randomNum = 0 - 300/4 - Math.random() * 300/2 ;
-            let newPipeTop = new Pipe(this.gameScreen, randomNum, './images/toppipe.png');
-            let newPipeBottom = new Pipe(this.gameScreen, randomNum + 500 , './images/bottompipe.png');
+            let newPipeTop = new Pipe(this.gameScreen, randomNum, '../images/toppipe.png');
+            let newPipeBottom = new Pipe(this.gameScreen, randomNum + 500 , '../images/bottompipe.png');
             this.obstacles.push(newPipeBottom , newPipeTop);
         }
     }
@@ -80,8 +80,8 @@ class Game {
     placePipesHard() {
         if(this.timer%100 === 0){
             let randomNum = 0 - 300/4 - Math.random() * 300/2 ;
-            let newPipeTop = new Pipe(this.gameScreen, randomNum, './images/toppipe.png');
-            let newPipeBottom = new Pipe(this.gameScreen, randomNum + 500 , './images/bottompipe.png');
+            let newPipeTop = new Pipe(this.gameScreen, randomNum, '../images/toppipe.png');
+            let newPipeBottom = new Pipe(this.gameScreen, randomNum + 500 , '../images/bottompipe.png');
             this.obstacles.push(newPipeBottom , newPipeTop);
         }
     }
