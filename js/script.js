@@ -8,15 +8,21 @@ window.onload = function () {
     soundButton.addEventListener('click',() => {
       sfx.theme.play();
     });
+    soundButton.addEventListener('mouseover',() => {
+      soundButton.style.cursor = 'pointer'
+    });
     stopButton.addEventListener('click',() => {
       sfx.theme.stop();
-    })
+    });
+    stopButton.addEventListener('mouseover',() => {
+      stopButton.style.cursor = 'pointer'
+    });
     startButton.addEventListener('click', () => {
         startGame();
     });
     startButton.addEventListener('mouseover', () => {
       startButton.style.cursor = 'pointer'
-    })
+    });
     restartButton.addEventListener('click', () => {
         sfx.heal.play();
         restartGame();
