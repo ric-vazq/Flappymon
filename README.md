@@ -19,6 +19,7 @@ Based on the popular game Flappybird, Flappymon adds a flavorful twist: it allow
 # Backlog Functions 
 - a Pause Button 
 - a High Score Board
+- Mobile VersionDd
 
 # Technologies Used
 
@@ -43,6 +44,7 @@ Based on the popular game Flappybird, Flappymon adds a flavorful twist: it allow
     - addEventListener('click')
     - addEventListener('mouseover)
     - sfx()
+    - new Howl()
     - startGame()
     - handleKeydown (event) 
     - window.addEventListner('keydown')
