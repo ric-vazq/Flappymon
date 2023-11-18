@@ -6,7 +6,9 @@ window.onload = function () {
     let game; 
 
     soundButton.addEventListener('click',() => {
-      sfx.theme.play();
+      if(!sfx.theme.playing()) {
+        sfx.theme.play();
+      };
     });
     soundButton.addEventListener('mouseover',() => {
       soundButton.style.cursor = 'pointer'
